@@ -1,3 +1,5 @@
+import Main from "@/components/layout/Main";
+import Sidebar from "@/components/layout/Sidebar";
 import { supabase } from "@/lib/supabase";
 
 export default async function Home() {
@@ -5,10 +7,16 @@ export default async function Home() {
     .from("courses")
     .select("*")
     .order("created_at", { ascending: false });
-  const data = JSON.stringify(response.data, null, 2);
+  const courses = response.data || [];
+
   return (
-    <main>
-      <pre>{data}</pre>
+    <main className='min-h-screen bg-zinc-950 text-white'>
+      <section className='flex'>
+        <Sidebar />
+        <section className='flex-1 p-8'>
+            <Main courses={courses}/>
+        </section>
+      </section>
     </main>
   );
 }
