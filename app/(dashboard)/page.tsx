@@ -1,5 +1,4 @@
 import Main from "@/components/layout/Main";
-import Sidebar from "@/components/layout/Sidebar";
 import { supabase } from "@/lib/supabase";
 
 export default async function Home() {
@@ -10,13 +9,6 @@ export default async function Home() {
   const courses = response.data || [];
 
   return (
-    <main className='min-h-screen bg-zinc-950 text-white'>
-      <section className='flex'>
-        <Sidebar />
-        <section className='flex-1 p-8'>
-            <Main courses={courses}/>
-        </section>
-      </section>
-    </main>
+    <Main courses={courses}/>
   );
 }

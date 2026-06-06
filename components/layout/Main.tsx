@@ -24,10 +24,14 @@ export default function Main({
   };
   return (
     <motion.section variants={container} initial='hidden' animate='show'>
-      <section className='grid gap-4 grid-cols-1 '>
-        <HeroSection />
-        <CourseBlock courses={courses} />
-        <ActivitySection />
+      <section className='grid gap-4 grid-cols-1  md:grid-cols-4 auto-rows-min'>
+        <section className='md:col-span-2 row-span-2 flex flex-col gap-4'>
+          <HeroSection />
+          <ActivitySection />
+        </section>
+        <section className='md:col-span-2 grid md:grid-cols-2 gap-4 auto-rows-min'>
+          <CourseBlock courses={courses} />
+        </section>
       </section>
     </motion.section>
   );

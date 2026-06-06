@@ -15,7 +15,7 @@ export default function HeroSection() {
         stiffness: 300,
         damping: 20,
       }}
-      className='col-span-1 md:col-span-2 rounded-3xl group relative overflow-hidden p-8 bg-zinc-900 '>
+      className=' md:col-span-2 md:row-span-2 rounded-3xl group relative overflow-hidden p-8 bg-zinc-900 '>
       <div className=' absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-linear-to-r  from-purple-500/10 via-blue-500/10 to-cyan-500/10' />
       <header className='relative z-10'>
         <h1 className='text-4xl font-bold'>Welcome back, Akshay 👋</h1>
